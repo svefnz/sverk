@@ -14,6 +14,10 @@ nodeseek:
   enable: true
   cron: 0 0 12 * * *
   cookie:
+enshan:
+  enable: true
+  cron: 0 0 12 * * *
+  cookie:
 
 bark:
   secretKey: 

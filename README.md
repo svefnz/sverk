@@ -5,6 +5,8 @@
 ## Features
 - [✓] [Hifini](https://www.hifini.com/)
 - [✓] [V2ex](https://www.v2ex.com/)
+- [✓] [Nodeseek](https://www.nodeseek.com/)
+- [✓] [恩山无线论坛](https://www.right.com.cn/)
 
 ## Docker
 

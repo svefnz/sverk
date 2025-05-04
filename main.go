@@ -73,13 +73,25 @@ func main() {
 	// flag
 	pflag.Parse()
 
-	if service == "hifini" {
+	// if service == "hifini" {
+	// 	scripts.Hifini()
+	// } else if service == "v2ex" {
+	// 	scripts.V2ex()
+	// } else if service == "nodeseek" {
+	// 	scripts.Nodeseek()
+	// } else if service == "node" {
+	// 	fmt.Println("未知服务")
+	// }
+	switch service {
+	case "hifini":
 		scripts.Hifini()
-	} else if service == "v2ex" {
+	case "v2ex":
 		scripts.V2ex()
-	} else if service == "nodeseek" {
+	case "nodeseek":
 		scripts.Nodeseek()
-	} else {
+	case "enshan":
+		scripts.Enshan()
+	default:
 		fmt.Println("未知服务")
 	}
 }
