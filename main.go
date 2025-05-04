@@ -38,7 +38,6 @@ func main() {
 		// hifini
 		if viper.GetBool("hifini.enable") {
 			_, err = c.AddFunc(viper.GetString("hifini.cron"), func() { scripts.Hifini() })
-
 			if err != nil {
 				notify.Bark("Hifini", "服务内部错误 "+err.Error())
 				return
@@ -49,12 +48,21 @@ func main() {
 		// v2ex
 		if viper.GetBool("v2ex.enable") {
 			_, err = c.AddFunc(viper.GetString("v2ex.cron"), func() { scripts.V2ex() })
-
 			if err != nil {
 				notify.Bark("V2ex", "服务内部错误 "+err.Error())
 				return
 			}
 			fmt.Printf("[service] V2ex - [cron] %s\n", viper.GetString("v2ex.cron"))
+		}
+
+		// nodeseek
+		if viper.GetBool("nodeseek.enable") {
+			_, err = c.AddFunc(viper.GetString("nodeseek.cron"), func() { scripts.Nodeseek() })
+			if err != nil {
+				notify.Bark("Nodeseek", "服务内部错误 "+err.Error())
+				return
+			}
+			fmt.Printf("[service] Nodeseek - [cron] %s\n", viper.GetString("nodeseek.cron"))
 		}
 
 		c.Start()
@@ -69,6 +77,8 @@ func main() {
 		scripts.Hifini()
 	} else if service == "v2ex" {
 		scripts.V2ex()
+	} else if service == "nodeseek" {
+		scripts.Nodeseek()
 	} else {
 		fmt.Println("未知服务")
 	}
