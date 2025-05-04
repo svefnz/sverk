@@ -1,0 +1,15 @@
+global:
+  appName: sverk
+  timeout: 15
+  icon: https://assets.lll.rest/sverk.png
+hifini:
+  enable: true
+  cron: 0 0 12 * * *
+  cookie:
+v2ex:
+  enable: true
+  cron: 0 0 12 * * *
+  cookie:
+
+bark:
+  secretKey: 
