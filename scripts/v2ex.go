@@ -103,5 +103,5 @@ func V2ex() {
 	msg := doc.Find("#Main table tbody tr:nth-child(2) td:nth-child(5)").Text()
 	balance := strings.Split(strings.TrimSpace(doc.Find(".balance_area.bigger").First().Text()), "  ")
 
-	notify.Bark("V2ex", fmt.Sprintf("[√] 签到成功 %s\n当前余额: 🟡%s\n⚪%s", msg, balance[0], balance[1]))
+	notify.Bark("V2ex", fmt.Sprintf("[✓] 签到成功 %s\n当前余额: 🟡%s\n⚪%s", msg, balance[0], balance[1]))
 }
