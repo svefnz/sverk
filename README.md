@@ -2,6 +2,10 @@
 
 > /ˈsvɜːrk/, personal checkin script, power by golang
 
+## Features
+- [✓] [Hifini](https://www.hifini.com/)
+- [✓] [V2ex](https://www.v2ex.com/)
+
 ## Docker
 
 ### Usage
