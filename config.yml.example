@@ -10,6 +10,10 @@ v2ex:
   enable: true
   cron: 0 0 12 * * *
   cookie:
+nodeseek:
+  enable: true
+  cron: 0 0 12 * * *
+  cookie:
 
 bark:
   secretKey: 
