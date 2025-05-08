@@ -67,15 +67,19 @@ func V2ex() {
 		isCheckined = true
 	}
 
+	fmt.Println(regexp.MustCompile(`once=(\d+)`).FindStringSubmatch(string(body))[1])
 	////
-	if !isCheckined {
-		matches := regexp.MustCompile(`once=(\d+)`).FindStringSubmatch(`once=(\d+)`)
-		if len(matches) > 1 {
-			http.Get("https://www.v2ex.com/mission/daily/redeem?once=" + matches[1])
-		} else {
-			notify.Bark("V2ex", "[x] 签到失败\n未获取到 once 参数")
-			return
-		}
+	if isCheckined {
+		notify.Bark("V2ex", "[-] 重复签到")
+		return
+	}
+	matches := regexp.MustCompile(`once=(\d+)`).FindStringSubmatch(string(body))
+	fmt.Println(matches[1])
+	if len(matches) > 1 {
+		http.Get("https://www.v2ex.com/mission/daily/redeem?once=" + matches[1])
+	} else {
+		notify.Bark("V2ex", "[x] 签到失败\n未获取到 once 参数")
+		return
 	}
 	////
 

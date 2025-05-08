@@ -21,7 +21,7 @@ docker run -d \
   --restart=always \
   -v $PWD/sverk:/app/conf \
   svefn/sverk:latest
-```
+```XoTxJPPxdA4&vVSAiT9h@&Rn
 
 ### Update
 
